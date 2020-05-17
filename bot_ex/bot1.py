@@ -1,4 +1,4 @@
-import requests,json,time,re
+import requests,json
 import random 
 from time import sleep
 
@@ -33,7 +33,7 @@ def login():
     })
 
     r = s.get('https://www.instagram.com/')
-    # token
+    
     
 
  
@@ -41,7 +41,7 @@ def login():
     if find != -1:
         
         user_json = s.get(f'https://instagram.com/{user}/?__a=1')
-        print(user_json)
+    
 
         if user_json.status_code ==200:
 
@@ -60,12 +60,13 @@ def login():
                 unsave =s.post(f'https://www.instagram.com/web/save/{i_d}/unsave/')
 
                
-                print('Done')
-                print('Erorr')
+                
                 if unsave.ok ==True:
-                    count +=1
+                    print('Done')
+                    
                 else:
-                    Erorr +=1
+                   print('Erorr')
+
         else:
             print('Something wrong')
                             
